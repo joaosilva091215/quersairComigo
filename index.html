@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Misterioso</title>
+    <link rel="shortcut icon" type="imagex/png" href="6329154.png">
+    <style>
+        body {
+            font-family: 'Creepster', cursive;
+            background-color: #2c1a36;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .fada {
+            background-color: #4a2a5a;
+            color: #fff;
+            padding: 20px;
+            border: 5px solid #8b5f8b;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(139, 95, 139, 0.7);
+            animation: aparecer 1.2s ease-out;
+            text-align: center;
+            position: relative;
+            font-family: 'PT Serif', cursive;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .fada p {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .carta {
+            display: none;
+            background: url('PNG\ -\ papeis\ 3.png') no-repeat center center/cover;
+            padding: 20px;
+            animation: aparecer 1s ease-out;
+            text-align: center;
+            position: relative;
+            height: 90%;
+            width: 90%;
+            font-family: 'Dancing Script', cursive;
+            color: #4b2a2a;
+            margin: 20px;
+            display: none;
+        }
+
+        .carta p {
+            font-size: 24px;
+        }
+
+        .carta.visible {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fundo-black {
+            background-color: #000000;
+        }
+
+        .fundo-purple {
+            background-color: #2c1a36;
+        }
+
+        @keyframes aparecer {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #8b0000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 18px;
+            color: #4b2a2a;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .botoes {
+            margin-top: 20px;
+        }
+
+        .botoes button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Creepster', cursive;
+        }
+
+        .botoes button#aceitar1,
+        .botoes button#aceitar2 {
+            background-color: #8b0000;
+            color: white;
+        }
+
+        .botoes button#recusar {
+            background-color: #4b0082;
+            color: white;
+        }
+
+        .confirmacao {
+            display: none;
+            background-color: #ff1493;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.7);
+            font-family: 'Courgette', cursive;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .confirmacao img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        .confirmacao h2 {
+            font-size: 30px;
+            color: white;
+        }
+
+        .p1Confirm {
+            display: none;
+            background-color: #ff7cc2;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.7);
+            font-family: 'PT Serif', cursive;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .p1Confirm img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        .p1Confirm h2 {
+            font-size: 30px;
+            color: white;
+        }
+
+        .p2Confirm {
+            display: none;
+            background-color: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(49, 49, 49, 0.7);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .p2Confirm img {
+            width: 450px;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .p2Confirm h2 {
+            font-size: 35px;
+            color: white;
+        }
+
+        .botoes button#aceitar3 {
+            background-color: #8b0000;
+            color: white;
+        }
+
+        .botoes button#aceitar4 {
+            background-color: #8b0000;
+            color: white;
+            width: 100%;
+            max-width: 200px;
+            max-width: 150px;
+            height: 150px;
+            padding: 15px;
+        }
+
+        .botoes button#recusar2 {
+            background-color: #4b0082;
+            color: white;
+        }
+
+        .botoes button#recusar3 {
+            background-color: #4b0082;
+            color: white;
+            width: 70px;
+            height: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .fada {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .fada img {
+                width: 100%;
+                height: auto;
+            }
+
+            .carta {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .confirmacao,
+            .p1Confirm,
+            .p2Confirm {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .confirmacao img,
+            .p1Confirm img,
+            .p2Confirm img {
+                max-width: 200px;
+            }
+
+            .confirmacao h2,
+            .p1Confirm h2,
+            .p2Confirm h2 {
+                font-size: 24px;
+            }
+
+            .botoes button {
+                width: 100%;
+                max-width: 150px;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .botoes button#aceitar4 {
+                width: 100%;
+                max-width: 150px;
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="fada">
+        <h1>Fada Madrinha</h1>
+        <img src="Jojo-Todynho-1.png" width="100%" alt="fada madrinha">
+        <p>Queridaaaaaaa!</p>
+        <p>seu printhuko te mandou uma carta ok?</p>
+        <p> se nao quiser ver sai da live filha ninguem te chamou aqui!</p>
+        <div class="botoes">
+            <button id="aceitar1">Ler Carta</button>
+        </div>
+    </div>
+    <div class="carta">
+        <h1>Convite de Encontro</h1>
+        <p>Querida Ana Julia,</p>
+        <p>Nesta noite de sexta-feira, 14 de março de 2025, convido você para um jantar encantado no restaurante Sushi King.</p>
+        <p>Prepare-se para uma noite de magia, mistério e delíciosa comida!</p>
+        <div class="botoes">
+            <button id="aceitar2">Aceitar</button>
+            <button id="recusar">Recusar</button>
+        </div>
+    </div>
+    <div class="p1Confirm">
+        <img src="images (1).jpg" alt="Ursinho Fofo">
+        <h2>VC realmente quer? serio mesmo??????</h2>
+        <div class="botoes">
+            <button id="aceitar3">certeza??</button>
+            <button id="recusar2">Recusar</button>
+        </div>
+    </div>
+    <div class="p2Confirm">
+        <img src="rdxp6o2kqfq71.jpg" alt="Ursinho Fofo">
+        <h2>Assim eu não estou te obrigando a nada serio mesmo vc faz o que quiser da vida!</h2>
+        <div class="botoes">
+            <button id="aceitar4">hehehehe</button>
+            <button id="recusar3">Recusar</button>
+        </div>
+    </div>
+    <div class="confirmacao">
+        <img src="i-love-you-gifs-gratistodo.com-8.gif" alt="Ursinho Fofo">
+        <h2>Obrigado! Te amo muito meu amor e te vejo amanhã no Sushui King!</h2>
+    </div>
+    <script>
+        const aceitarBtn1 = document.getElementById('aceitar1');
+        const aceitarBtn2 = document.getElementById('aceitar2');
+        const aceitarBtn3 = document.getElementById('aceitar3');
+        const aceitarBtn4 = document.getElementById('aceitar4');
+        const recusarBtn = document.getElementById('recusar');
+        const recusarBtn2 = document.getElementById('recusar2');
+        const recusarBtn3 = document.getElementById('recusar3');
+        const carta = document.querySelector('.carta');
+        const fada = document.querySelector('.fada');
+        const confirmacao = document.querySelector('.confirmacao');
+        const p1Confirm = document.querySelector('.p1Confirm');
+        const p2Confirm = document.querySelector('.p2Confirm');
+
+        let aceitarSize = 1;
+
+        recusarBtn.addEventListener('mouseover', () => {
+            if (recusarBtn.style.position === 'absolute') {
+                recusarBtn.style.position = 'static';
+            } else {
+                recusarBtn.style.position = 'absolute';
+                recusarBtn.style.top = `${Math.random() * 80 + 10}%`;
+                recusarBtn.style.left = `${Math.random() * 80 + 10}%`;
+            }
+        });
+
+        recusarBtn2.addEventListener('mouseover', () => {
+            if (recusarBtn2.style.position === 'absolute') {
+                recusarBtn2.style.position = 'static';
+            } else {
+                recusarBtn2.style.position = 'absolute';
+                recusarBtn2.style.top = `${Math.random() * 80 + 10}%`;
+                recusarBtn2.style.left = `${Math.random() * 80 + 10}%`;
+            }
+        });
+
+        recusarBtn3.addEventListener('mouseover', () => {
+            if (recusarBtn3.style.position === 'absolute') {
+                recusarBtn3.style.position = 'static';
+            } else {
+                recusarBtn3.style.position = 'absolute';
+                recusarBtn3.style.top = `${Math.random() * 80 + 10}%`;
+                recusarBtn3.style.left = `${Math.random() * 80 + 10}%`;
+            }
+        });
+
+        aceitarBtn1.addEventListener('click', () => {
+            fada.style.display = 'none';
+            carta.classList.add('visible');
+        });
+
+        aceitarBtn2.addEventListener('click', () => {
+            carta.style.display = 'none';
+            p1Confirm.style.display = 'block';
+        });
+
+        aceitarBtn3.addEventListener('click', () => {
+            document.body.classList.add('fundo-black');
+            p1Confirm.style.display = 'none';
+            p2Confirm.style.display = 'block';
+        });
+
+        aceitarBtn4.addEventListener('click', () => {
+            document.body.classList.add('fundo-purple');
+            p2Confirm.style.display = 'none';
+            confirmacao.style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
